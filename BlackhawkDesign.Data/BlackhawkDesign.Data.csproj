@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IntelliTect.Coalesce" Version="4.0.0-alpha.20231222.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.*" />
+  </ItemGroup>
+</Project>

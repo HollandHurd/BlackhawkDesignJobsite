@@ -1,0 +1,16 @@
+{
+  "webProject": {
+    "projectFile": "./BlackhawkDesign.Web/BlackhawkDesign.Web.csproj"
+  },
+  "dataProject": {
+    "projectFile": "./BlackhawkDesign.Data/BlackhawkDesign.Data.csproj"
+  },
+
+  "rootGenerator": "Vue",
+
+  "generatorConfig": {
+    "Scripts": {
+      "targetDirectory": "../src"
+    }
+  }
+}
