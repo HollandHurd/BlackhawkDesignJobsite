@@ -1,8 +1,9 @@
 <template>
   <v-card class="mx-auto" max-width="500">
     <v-card-title class="text-h6 font-weight-regular justify-space-between">
-      <span>{{ currentTitle }}</span>
       <v-avatar align="end" color="primary" size="32" v-text="step"></v-avatar>
+      <span>{{ currentTitle }}</span>
+
     </v-card-title>
 
     <v-window v-model="step">
@@ -25,8 +26,7 @@
           />
 
           <span class="text-caption text-grey-darken-1">
-            This is the email you will use to login to your Blackhawk Design
-            account
+            
           </span>
         </v-card-text>
       </v-window-item>
@@ -83,19 +83,17 @@
 
       <v-window-item :value="4">
         <div class="pa-4 text-center">
-          <v-img
-            class="mb-4"
-            contain
-            height="128"
-            src="../assets/logo.png"
-          ></v-img>
+          <img src="../assets/logo.png"
+               width="128"
+               height="128"
+               alt="Blackhawk Design Logo" />
           <h3 class="text-h6 font-weight-light mb-2">
             Thanks for applying to Blackhawk Design
           </h3>
-          <span class="text-caption text-grey"
-            >Thanks for applying it can take up to several business days to
-            review your application!</span
-          >
+          <span class="text-caption text-grey">
+            Thanks for applying it can take up to several business days to
+            review your application!
+          </span>
         </div>
       </v-window-item>
     </v-window>
@@ -138,7 +136,6 @@ async function save() {
 
     await props.budget.$save();
     emit("saved");
-    alert("Submitted!");
   }
 }
 
