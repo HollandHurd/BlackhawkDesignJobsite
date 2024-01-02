@@ -13,22 +13,7 @@
           />
         </router-link>
       </v-toolbar-title>
-
-      <div class="text-center">
-        <v-btn prepend-icon="mdi-check-circle" append-icon="mdi-account-circle">
-          <template v-slot:prepend>
-            <v-icon color="success"></v-icon>
-          </template>
-
-          Button
-
-          <template v-slot:append>
-            <v-icon color="warning"></v-icon>
-          </template>
-        </v-btn>
-      </div>
-
-      <v-btn variant="tonal" @click="toggleTheme">Toggle Theme</v-btn>
+      <v-btn @click=toggleTheme variant="flat" icon="mdi-home">t</v-btn>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer">
       <v-list>

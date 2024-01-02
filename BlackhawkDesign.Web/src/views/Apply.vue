@@ -3,7 +3,6 @@
     <v-container class="mb-6">
       <v-row align="center" no-gutters style="height: 150px">
         <v-col v-for="n in 1" :key="n"> </v-col>
-
         <v-col v-for="n in 1" :key="n">
           <v-sheet class="pa-2 ma-2">
             <CreateApplication

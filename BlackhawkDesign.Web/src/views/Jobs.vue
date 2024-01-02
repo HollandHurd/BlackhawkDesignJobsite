@@ -5,7 +5,7 @@
         <v-col v-for="n in 1" :key="n">
           <v-sheet class="align"> </v-sheet>
           <h1>Why apply?</h1>
-          Because it makes life so much more interesting.
+          
         </v-col>
 
         <v-col v-for="n in 1" :key="n">
@@ -18,7 +18,7 @@
                 <v-card elevation="5" class="ma-2">
                   <v-img
                     class="align-end text-white"
-                    height="500"
+                    height="300"
                     :src="auctaljob.jobImage"
                     cover
                   ></v-img>

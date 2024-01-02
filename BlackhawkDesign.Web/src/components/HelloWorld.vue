@@ -13,7 +13,7 @@
         />
       </h1>
 
-      <h4 class="subheading">Take charge of opportunities!</h4>
+      <h4 class="subheading">cooper is hot</h4>
     </div>
   </v-parallax>
 </template>
