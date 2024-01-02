@@ -3,14 +3,13 @@
     <v-card-title class="text-h6 font-weight-regular justify-space-between">
       <v-avatar align="end" color="primary" size="32" v-text="step"></v-avatar>
       <span>{{ currentTitle }}</span>
-
     </v-card-title>
-
+    
     <v-window v-model="step">
       <v-window-item :value="1">
         <v-card-text>
           <c-input
-            :model="budget"
+            :model="app"
             for="firstName"
             autofocus
             @keyup.enter="save"
@@ -18,7 +17,7 @@
             placeholder="John"
           />
           <c-input
-            :model="budget"
+            :model="app"
             for="lastName"
             @keyup.enter="save"
             label="Last name..."
@@ -34,14 +33,14 @@
       <v-window-item :value="2">
         <v-card-text>
           <c-input
-            :model="budget"
+            :model="app"
             for="email"
             @keyup.enter="save"
             label="Email"
             placeholder="john@gmail.com"
           />
           <c-input
-            :model="budget"
+            :model="app"
             for="phoneNumber"
             label="Phone"
             placeholder="Phone"
@@ -57,19 +56,19 @@
       <v-window-item :value="3">
         <div class="pa-4 text-center">
           <c-input
-            :model="budget.uploadAttachment"
+            :model="app.uploadAttachment"
             for="file"
             variant="solo"
           ></c-input>
           <c-select-many-to-many
-            :model="budget"
+            :model="app"
             for="jobApplied"
             dense
             outlined
             label="Applying For"
           />
           <c-input
-            :model="budget"
+            :model="app"
             for="coverLetter"
             @keyup.enter="save"
             label="Cover Letter (Optional)"
@@ -120,27 +119,27 @@ const jobList = new JobListViewModel();
 jobList.$load();
 
 const props = defineProps<{
-  budget: ApplicationViewModel;
+  app: ApplicationViewModel;
 }>();
 
-const newApp = computed(() => !props.budget.normalizedName);
+const newApp = computed(() => !props.app.normalizedName);
 
 const emit = defineEmits<{
   (e: "saved"): void;
 }>();
 
 async function save() {
-  if (props.budget.firstName && props.budget.lastName) {
-    props.budget.normalizedName =
-      props.budget.firstName + " " + props.budget.lastName;
+  if (props.app.firstName && props.app.lastName) {
+    props.app.normalizedName =
+      props.app.firstName + " " + props.app.lastName;
 
-    await props.budget.$save();
+    await props.app.$save();
     emit("saved");
   }
 }
 
 async function upload() {
-  await props.budget.uploadAttachment.invokeWithArgs();
+  await props.app.uploadAttachment.invokeWithArgs();
 }
 let hasSaved: boolean = false;
 function handleSave() {
@@ -167,7 +166,7 @@ const currentTitle = computed(() => {
     case 1:
       return "Application";
     case 2:
-      if (props.budget.firstName && props.budget.lastName) {
+      if (props.app.firstName && props.app.lastName) {
         {
           return "Contact Information";
         }
@@ -178,7 +177,7 @@ const currentTitle = computed(() => {
         }
       }
     case 3:
-      if (props.budget.email && props.budget.phoneNumber) {
+      if (props.app.email && props.app.phoneNumber) {
         {
           handleSave();
           return "Upload your resume!";

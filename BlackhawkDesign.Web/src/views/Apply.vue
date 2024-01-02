@@ -8,8 +8,8 @@
           <v-sheet class="pa-2 ma-2">
             <CreateApplication
               v-model="newAppDialog"
-              :budget="newApp"
-              @saved="loadBudgets"
+              :app="newApp"
+              @saved="loadApps"
             />
           </v-sheet>
         </v-col>
@@ -25,9 +25,9 @@ import { ApplicationViewModel } from "@/viewmodels.g";
 const newAppDialog = ref(false);
 let newApp = new ApplicationViewModel();
 
-loadBudgets();
+loadApps();
 
-function loadBudgets() {
+function loadApps() {
   newApp = new ApplicationViewModel();
 }
 </script>

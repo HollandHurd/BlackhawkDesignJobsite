@@ -25,12 +25,6 @@ export default createRouter({
       name: "apply",
       component: () => import("./views/Apply.vue")
     },
-    {
-      path: '/person/:id',
-      name: 'persondetails',
-      component: () => import('@/views/persondetails.vue'),
-      props: route => ({ id: +route.params.id }),
-    },
 
     {
       path: '/Test',
