@@ -15,9 +15,10 @@
         </router-link>
         
       </v-toolbar-title>
-
+      <v-btn href="/">Home</v-btn>
+      <v-btn href="/jobs">Jobs</v-btn>
+      <v-btn href="/apply">Apply</v-btn>
       
-
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn @click=toggleTheme variant="flat" icon="mdi-home">t</v-btn>
 

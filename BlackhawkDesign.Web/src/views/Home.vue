@@ -4,6 +4,7 @@
     (either kebab-case or PascalCase works.) -->
     <HelloWorld msg=" to your new Vue.js application!" />
   </div>
+  <Footer></Footer>
 </template>
 
 <script setup lang="ts">
