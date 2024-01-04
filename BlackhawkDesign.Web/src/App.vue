@@ -1,9 +1,10 @@
 <template>
+<div class="app">
 
-  <v-app id="vue-app">
+  <v-app id="vue-app" >
     <v-app-bar color="primary">
       <router-link to="/" style="color: inherit">
-        <h2>Blackhawk Design</h2>
+        <h2 class="title">Blackhawk Design</h2>
       </router-link>
       
       <v-toolbar-title>
@@ -64,7 +65,7 @@
     </v-main>
 
   </v-app>
-
+</div>
 </template>
 
 <script setup lang="ts">
@@ -79,6 +80,9 @@ function toggleTheme() {
 </script>
 
 <style lang="scss">
+$small: 700px;
+$medium: 900px;
+
 .router-transition-enter-active,
 .router-transition-leave-active {
   transition: 0.1s ease-out;
@@ -87,5 +91,25 @@ function toggleTheme() {
 .router-transition-enter-from,
 .router-transition-leave-to {
   opacity: 0;
+}
+
+.main {
+    
+}
+
+
+
+.app {
+  @media screen and (max-width: $small) {
+    .app {
+      display:none
+    }
+  }
+
+  @media app and (min-width: $medium) {
+    .app {
+      visibility:hidden
+  }
+  }
 }
 </style>

@@ -6,7 +6,8 @@
         v-for="auctaljob in jobList.$items"
         :key="i"
         :title=auctaljob.jobName
-        text="back" 
+        text="test"
+        
       >
     </v-expansion-panel>
 
