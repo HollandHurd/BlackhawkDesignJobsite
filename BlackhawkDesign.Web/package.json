@@ -13,15 +13,17 @@
     "coalesce": "dotnet coalesce"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.3.0",
+    "@mdi/font": "^7.4.47",
     "coalesce-vue": "4.0.0-alpha.20230711.1",
     "coalesce-vue-vuetify3": "4.0.0-alpha.20230711.1",
+    "material-design-icons-iconfont": "^6.7.0",
     "typeface-roboto": "1.1.13",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2",
     "vuetify": "^3.3.6"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitest/coverage-c8": "^0.32.2",
     "@vue/eslint-config-typescript": "^11.0.3",

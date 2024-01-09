@@ -1,8 +1,12 @@
 import { createApp } from "vue";
 import { createVuetify } from "vuetify";
 import { createCoalesceVuetify } from "coalesce-vue-vuetify3";
-import { aliases, fa } from "vuetify/iconsets/fa";
 import { AxiosClient as CoalesceAxiosClient } from "coalesce-vue";
+import { aliases, fa } from "vuetify/iconsets/fa";
+import { mdi } from "vuetify/lib/iconsets/mdi";
+// make sure to also import the coresponding css
+import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
+import "@fortawesome/fontawesome-free/css/all.css"; // Ensure your project is capable of handling css files
 
 import App from "./App.vue";
 import router from "./router";
@@ -13,12 +17,13 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "coalesce-vue-vuetify3/styles.css";
 import "@/site.scss";
 import "vuetify/styles";
+import "material-design-icons-iconfont/dist/material-design-icons.css";
+import "@mdi/font/css/materialdesignicons.css";
 
 import $metadata from "@/metadata.g";
 // viewmodels.g has side effects - it populates the global lookup on ViewModel and ListViewModel.
 // This global lookup allows the admin page components to function.
 import "@/viewmodels.g";
-
 
 // SETUP: vuetify
 const inputDefaults = { density: "compact", variant: "outlined" };
@@ -26,7 +31,10 @@ const vuetify = createVuetify({
   icons: {
     defaultSet: "fa",
     aliases,
-    sets: { fa },
+    sets: {
+      mdi,
+      fa,
+    },
   },
   defaults: {
     VTextField: inputDefaults,
@@ -39,7 +47,7 @@ const vuetify = createVuetify({
     VSwitch: { color: "primary" }, // https://github.com/vuetifyjs/vuetify/issues/16486
   },
   theme: {
-    defaultTheme: 'dark',
+    defaultTheme: "dark",
     themes: {
       dark: {
         colors: {
@@ -51,8 +59,6 @@ const vuetify = createVuetify({
           primary: "#811618",
         },
       },
-      
-      
     },
   },
 });
