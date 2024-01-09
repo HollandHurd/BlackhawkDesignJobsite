@@ -1,6 +1,4 @@
-﻿using Azure.Core;
-using Azure.Identity;
-using IntelliTect.Coalesce.Models;
+﻿using IntelliTect.Coalesce.Models;
 using IntelliTect.Coalesce.Utilities;
 using Microsoft.Extensions.Configuration;
 using System.Security.Claims;

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -15,18 +16,18 @@ namespace BlackhawkDesign.Data.Migrations
                 name: "Applications",
                 columns: table => new
                 {
-                    NormalizedName = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CoverLetter = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Applied = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
-                    AttachmentName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NormalizedName = table.Column<string>(type: "text", nullable: false),
+                    FirstName = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "text", nullable: false),
+                    CoverLetter = table.Column<string>(type: "text", nullable: true),
+                    Applied = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    AttachmentName = table.Column<string>(type: "text", nullable: true),
                     AttachmentSize = table.Column<long>(type: "bigint", nullable: false),
-                    AttachmentType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AttachmentHash = table.Column<byte[]>(type: "varbinary(32)", maxLength: 32, nullable: true),
-                    Content = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
+                    AttachmentType = table.Column<string>(type: "text", nullable: true),
+                    AttachmentHash = table.Column<byte[]>(type: "bytea", maxLength: 32, nullable: true),
+                    Content = table.Column<byte[]>(type: "bytea", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -37,11 +38,11 @@ namespace BlackhawkDesign.Data.Migrations
                 name: "Jobs",
                 columns: table => new
                 {
-                    JobName = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    JobImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    JobDesc = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    JobBenefit = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Qualifications = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    JobName = table.Column<string>(type: "text", nullable: false),
+                    JobImage = table.Column<string>(type: "text", nullable: false),
+                    JobDesc = table.Column<string>(type: "text", nullable: false),
+                    JobBenefit = table.Column<string>(type: "text", nullable: false),
+                    Qualifications = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,10 +53,10 @@ namespace BlackhawkDesign.Data.Migrations
                 name: "JobApplications",
                 columns: table => new
                 {
-                    JobApplicationId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ApplicationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    JobId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    JobApplicationId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ApplicationId = table.Column<string>(type: "text", nullable: true),
+                    JobId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
