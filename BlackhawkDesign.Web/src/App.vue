@@ -55,17 +55,16 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-main>
-      <!-- https://stackoverflow.com/questions/52847979/what-is-router-view-key-route-fullpath -->
-      <router-view v-slot="{ Component, route }">
-        <transition name="router-transition" mode="out-in" appear>
-          <component :is="Component" :key="route.path" />
-        </transition>
-      </router-view>
-    </v-main>
-
-  </v-app>
-</div>
+      <v-main>
+        <!-- https://stackoverflow.com/questions/52847979/what-is-router-view-key-route-fullpath -->
+        <router-view v-slot="{ Component, route }">
+          <transition name="router-transition" mode="out-in" appear>
+            <component :is="Component" :key="route.path" />
+          </transition>
+        </router-view>
+      </v-main>
+    </v-app>
+  </div>
 </template>
 
 <script setup lang="ts">
