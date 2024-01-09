@@ -21,10 +21,10 @@
       <v-btn href="/apply">Apply</v-btn>
       
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn @click=toggleTheme variant="flat" icon="mdi-home">t</v-btn>
+      <v-btn class="toggleTheme" @click=toggleTheme variant="flat" icon="mdi-home">t</v-btn>
 
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" permanent
+    <v-navigation-drawer v-model="drawer" temporary
         location="top">
       <v-list>
         <v-list-item link to="/">
@@ -80,36 +80,50 @@ function toggleTheme() {
 </script>
 
 <style lang="scss">
-$small: 700px;
-$medium: 900px;
+  .app {
+    .v-app-bar-nav-icon {
+      display: none;
+    }
 
-.router-transition-enter-active,
-.router-transition-leave-active {
-  transition: 0.1s ease-out;
-}
+    .v-navigation-drawer {
+      display: none;
+    }
 
-.router-transition-enter-from,
-.router-transition-leave-to {
-  opacity: 0;
-}
+    .drawer {
+      display: none;
+    }
 
-.main {
-    
-}
+    @media screen and (max-width: 700px) {
+      .v-btn {
+        display: none;
+      }
 
+      .v-app-bar-nav-icon,
+      .toggleTheme {
+        display: inherit;
+      }
 
+      .v-navigation-drawer {
+        display: list-item;
+      }
+    }
 
-.app {
-  @media screen and (max-width: $small) {
-    .app {
-      display:none
+    @media screen and (min-width: 701px) {
+      .v-btn {
+        display: inherit;
+      }
+
+      .v-app-bar-nav-icon {
+        display: none;
+      }
+
+      .toggleTheme {
+        display: inherit;
+      }
+
+      .v-navigation-drawer {
+        display: none;
+      }
     }
   }
-
-  @media app and (min-width: $medium) {
-    .app {
-      visibility:hidden
-  }
-  }
-}
 </style>
