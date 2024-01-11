@@ -21,8 +21,11 @@
       <v-btn href="/apply">Apply</v-btn>
       
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn class="toggleTheme" @click=toggleTheme variant="flat" icon="mdi-home">t</v-btn>
-
+      
+      <v-btn
+        :icon="theme.global.current.value.dark ? 'fa fa-moon' : 'fa fa-sun'"
+        @click=toggleTheme
+      ></v-btn>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" temporary
         location="top">
@@ -54,7 +57,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
+    
       <v-main>
         <!-- https://stackoverflow.com/questions/52847979/what-is-router-view-key-route-fullpath -->
         <router-view v-slot="{ Component, route }">
@@ -63,6 +66,7 @@
           </transition>
         </router-view>
       </v-main>
+      <Footer></Footer>
     </v-app>
   </div>
 </template>

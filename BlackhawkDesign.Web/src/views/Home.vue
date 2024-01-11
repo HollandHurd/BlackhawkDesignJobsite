@@ -17,6 +17,7 @@
       </h4>
     </div>
   </v-parallax>
+  
   <div class="mission">
 
     <v-card
@@ -43,6 +44,17 @@
 
 
   </v-card>
+  </div>
+  <div class="collaborations">
+    - Worked with Cheney High School
+    - Worked with Cheney Middle School
+    
+  </div>
+  <div class="subscription">
+    Haven't we convinced you enough subscribe to get email on latest job updates!
+    - Name
+    - Email 
+    Submit
   </div>
   <div class="skills">
     <v-row align="center" justify="center">
@@ -127,7 +139,6 @@
     </v-expansion-panels>
     
   </div>
-  <Footer></Footer>
 </template>
 
 <script setup lang="ts">
